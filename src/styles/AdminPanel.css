@@ -1,0 +1,71 @@
+.admin-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #FAEDCD 0%, #CCD5AE 100%);
+  min-height: 100vh;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.admin-header h1 {
+  color: #99BAB9;
+  font-size: 28px;
+}
+
+.admin-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.create-user-section h2 {
+  color: #99BAB9;
+  margin-bottom: 20px;
+}
+
+.user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.user-form input,
+.user-form select {
+  padding: 12px;
+  border: 2px solid #EABCA8;
+  border-radius: 6px;
+  font-size: 14px;
+  background: #FAEDCD;
+}
+
+.create-btn {
+  padding: 12px;
+  background: #99BAB9;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.create-btn:hover {
+  background: #CCD5AE;
+}
+
+.back-btn {
+  background: #EABCA8;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}

@@ -1,0 +1,15 @@
+.course-detail {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.course-detail button {
+  background: #EABCA8;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  margin-bottom: 20px;
+}

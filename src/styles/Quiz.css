@@ -1,0 +1,139 @@
+.quiz-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #FAEDCD 0%, #CCD5AE 100%);
+  min-height: 100vh;
+}
+
+.quiz-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.quiz-header h1 {
+  color: #99BAB9;
+  font-size: 28px;
+}
+
+.back-btn {
+  background: #EABCA8;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: #E4ACB2;
+}
+
+.quiz-form {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.questions {
+  margin-bottom: 30px;
+}
+
+.question-card {
+  background: #FAEDCD;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 4px solid #EABCA8;
+}
+
+.question-card h3 {
+  color: #99BAB9;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.question-text {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.answer-input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #E4ACB2;
+  border-radius: 6px;
+  font-size: 14px;
+  background: white;
+}
+
+.answer-input:focus {
+  outline: none;
+  border-color: #99BAB9;
+  box-shadow: 0 0 0 3px rgba(153, 186, 185, 0.1);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: #99BAB9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background: #CCD5AE;
+}
+
+.result-card {
+  background: white;
+  padding: 60px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.result-card h2 {
+  color: #99BAB9;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.grade-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.grade {
+  font-size: 72px;
+  color: #EABCA8;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.label {
+  color: #999;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.loading {
+  text-align: center;
+  padding: 60px 20px;
+  color: #99BAB9;
+  font-size: 18px;
+}

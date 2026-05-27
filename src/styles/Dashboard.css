@@ -1,0 +1,106 @@
+.dashboard {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #FAEDCD 0%, #CCD5AE 100%);
+}
+
+.navbar {
+  background: #99BAB9;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.navbar h1 {
+  color: white;
+  font-size: 24px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links button {
+  background: #EABCA8;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.nav-links button:hover {
+  background: #E4ACB2;
+}
+
+.logout-btn {
+  background: #E4ACB2 !important;
+}
+
+.dashboard-content {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.welcome-box {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.welcome-box h2 {
+  color: #99BAB9;
+  margin-bottom: 10px;
+}
+
+.welcome-box p {
+  color: #666;
+  font-size: 16px;
+}
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.action-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.action-card h3 {
+  color: #99BAB9;
+  margin-bottom: 10px;
+}
+
+.action-card p {
+  color: #999;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.action-card button {
+  background: #CCD5AE;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.action-card button:hover {
+  background: #99BAB9;
+}
