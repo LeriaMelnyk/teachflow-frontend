@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Login.css';
+import { Eye, EyeOff } from 'lucide-react';
 
 export default function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const navigate = useNavigate();
@@ -25,7 +27,7 @@ export default function Login() {
       console.log('Login response:', data);
 
       if (!response.ok) {
-        setError(data.error || 'Login failed');
+        setError(data.error || 'Помилка входу');
         setLoading(false);
         return;
       }
@@ -39,42 +41,102 @@ export default function Login() {
 
         navigate('/dashboard');
       } else {
-        setError('No token received');
+        setError('Токен не отримано');
       }
     } catch (error) {
       console.error('Login error:', error);
-      setError('Login error: ' + error.message);
+      setError('Помилка входу: ' + error.message);
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div className="login-container">
-      <div className="login-box">
-        <h1>TeachFlow</h1>
-        <form onSubmit={handleLogin}>
-          {error && <div className="error-message">{error}</div>}
-          <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-            disabled={loading}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            disabled={loading}
-          />
-          <button type="submit" disabled={loading}>
-            {loading ? 'Logging in...' : 'Login'}
-          </button>
-        </form>
+    <div className="login-wrapper">
+      <div className="login-background">
+        <div className="gradient-blob blob-1"></div>
+        <div className="gradient-blob blob-2"></div>
+        <div className="gradient-blob blob-3"></div>
+      </div>
+
+      <div className="login-container">
+        <div className="login-content">
+          <div className="login-header">
+            <div className="logo-icon">📚</div>
+            <h1 className="app-title">TeachFlow</h1>
+            <p className="app-subtitle">Освітня платформа нового покоління</p>
+          </div>
+
+          <form onSubmit={handleLogin} className="login-form">
+            {error && (
+              <div className="error-message">
+                <span>⚠️</span>
+                <span>{error}</span>
+              </div>
+            )}
+
+            <div className="form-group">
+              <label htmlFor="username" className="form-label">Ім'я користувача</label>
+              <div className="input-wrapper">
+                <input
+                  id="username"
+                  type="text"
+                  placeholder="Введіть ваше ім'я користувача"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  required
+                  disabled={loading}
+                  className="form-input"
+                />
+                <div className="input-icon">👤</div>
+              </div>
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="password" className="form-label">Пароль</label>
+              <div className="input-wrapper password-wrapper">
+                <input
+                  id="password"
+                  type={showPassword ? 'text' : 'password'}
+                  placeholder="Введіть ваш пароль"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                  disabled={loading}
+                  className="form-input"
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="toggle-password"
+                  disabled={loading}
+                  aria-label="Показати/приховати пароль"
+                >
+                  {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+                </button>
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              disabled={loading}
+              className={`login-button ${loading ? 'loading' : ''}`}
+            >
+              {loading ? (
+                <>
+                  <span className="spinner"></span>
+                  Вхід...
+                </>
+              ) : (
+                'Увійти'
+              )}
+            </button>
+          </form>
+
+          <div className="login-footer">
+            <p>Перший раз тут? <a href="#signup">Зверніться до адміністратора системи, аби зареєструватись</a></p>
+          </div>
+        </div>
       </div>
     </div>
   );
